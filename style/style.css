@@ -50,7 +50,7 @@ body {
   position: absolute;
   z-index: 10;
   width: 245px;
-  height: 70vh;
+  bottom: 20px;
   left: 100px;
   border-radius: 30px;
   background-color: white;
