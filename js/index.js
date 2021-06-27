@@ -24,9 +24,11 @@ const searchLocationsNear = (stores) => {
         );
         let name = store.storeName;
         let address = store.addressLines[0];
+        let openStatusText = store.openStatusText;
+        let phoneNumber = store.phoneNumber;
 
         bounds.extend(latlng);
-        createMarker(latlng, name, address, index);
+        createMarker(latlng, name, address, index, openStatusText, phoneNumber);
     });
     map.fitBounds(bounds);
 }
@@ -48,7 +50,7 @@ const getStores = () => {
 }
 
 // create a marker on map
-const createMarker = (latlng, name, address, storeNumber) => {
+const createMarker = (latlng, name, address, storeNumber, openStatusText, phoneNumber) => {
     const marker = new google.maps.Marker({
             position: latlng,
             map,
@@ -56,7 +58,28 @@ const createMarker = (latlng, name, address, storeNumber) => {
         });
 
     // info window odisplays on click of a marker
-    let contentString = `<b>${name}</b> <br/> ${address}`
+    let contentString = `
+        <div class="store-info-window">
+            <div class="store-info-name">
+                ${name}
+            </div>
+            <div class="store-info-open-status">
+                ${openStatusText}
+            </div>
+            <div class="store-info-address">
+                <div class="icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <span>${address}</span>
+            </div>
+            <div class="store-info-phone">
+                <div class="icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <span>${phoneNumber}</span>
+            </div>
+        </div>
+    `
 
     marker.addListener("click", () => {
         infowindow.setContent(contentString);

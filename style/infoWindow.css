@@ -1,0 +1,35 @@
+.store-info-window {
+  min-width: 300px;
+  font-size: 18px;
+  padding: 8px;
+}
+.store-info-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.87);
+}
+.store-info-open-status {
+  margin-top: 6px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+  color: rgba(0, 0, 0, 0.56);
+}
+
+.store-info-address,
+.store-info-phone {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+}
+.icon {
+  width: 30px;
+  height: 30px;
+  color: white;
+  font-size: 12px;
+  margin-right: 6px;
+  background-color: #1985a1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
