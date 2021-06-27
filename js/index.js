@@ -1,4 +1,5 @@
 // displays map on page
+let markers =[];
 let infowindow;
 let map;
 
@@ -11,6 +12,16 @@ function initMap() {
     });
     infowindow = new google.maps.InfoWindow();
     getStores();
+}
+
+const setOnClickListener = () => {
+    let storeElement = document.querySelectorAll('.store-container');
+    
+    storeElement.forEach((ele, index) => {
+       ele.addEventListener('click', ()=> {
+           google.maps.event.trigger(markers[index], 'click')
+       })
+    })
 }
 
 const setStoresList = (data) => {
@@ -74,6 +85,7 @@ const getStores = () => {
     }).then((data) => {
         searchLocationsNear(data);
         setStoresList(data);
+        setOnClickListener();
     })
 }
 
@@ -117,4 +129,6 @@ const createMarker = (latlng, name, address, storeNumber, openStatusText, phoneN
         shouldFocus: false,
         });
     });
+
+    markers.push(marker)
 }
