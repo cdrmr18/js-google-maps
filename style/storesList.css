@@ -8,10 +8,13 @@
   border-radius: 30px;
   background-color: white;
   top: 175px;
+  overflow: hidden;
+  padding-bottom: 30px;
 }
 .stores-list {
   padding: 0 20px;
   flex-grow: 1;
+  overflow-y: scroll;
 }
 .store-container {
   border-bottom: 1px solid #979797;
@@ -35,7 +38,7 @@
 .store-address {
   font-size: 16px;
   color: #514c4c;
-  margin-top: 19px;
+  margin-top: 8px;
 }
 .store-address span {
   display: block;
@@ -60,4 +63,8 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
+}
+.store-name {
+  margin-top: 19px;
+  font-weight: bold;
 }

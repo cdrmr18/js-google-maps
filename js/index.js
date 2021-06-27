@@ -13,6 +13,33 @@ function initMap() {
     getStores();
 }
 
+const setStoresList = (data) => {
+    let storeContainerHTML = ``;
+
+    data.forEach((store, index) => {
+        storeContainerHTML += ` <div class="store-container">
+            <div class="store-container-bg">
+                <div class="store-info-container">
+                    <div class="store-name">${store.storeName}</div>
+                    <div class="store-address">
+                        <span>${store.addressLines[0]}</span>
+                        <span>${store.addressLines[1]}</span>
+                    </div>
+                    <div class="store-phone-number">
+                        <a href="tel:${store.phoneNumber}">${store.phoneNumber}</a>
+                    </div>
+                </div>
+                <div class="store-number-container">
+                    <div class="store-number">
+                        ${index + 1}
+                    </div>
+                </div>
+            </div>
+        </div> `
+    })
+
+    document.querySelector('.stores-list').innerHTML = storeContainerHTML;
+}
 // search for all locations then create markers for each
 const searchLocationsNear = (stores) => {
     let bounds = new google.maps.LatLngBounds();
@@ -46,6 +73,7 @@ const getStores = () => {
         }
     }).then((data) => {
         searchLocationsNear(data);
+        setStoresList(data);
     })
 }
 
