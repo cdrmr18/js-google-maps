@@ -1,0 +1,63 @@
+.stores-list-container {
+  display: flex;
+  position: absolute;
+  z-index: 10;
+  width: 280px;
+  bottom: 20px;
+  left: 100px;
+  border-radius: 30px;
+  background-color: white;
+  top: 175px;
+}
+.stores-list {
+  padding: 0 20px;
+  flex-grow: 1;
+}
+.store-container {
+  border-bottom: 1px solid #979797;
+  display: flex;
+}
+.store-container-bg:hover {
+  background-color: #cccccc87;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.store-container-bg {
+  display: flex;
+  flex-grow: 1;
+  padding: 0 8px;
+  margin: 12px 0;
+  transition: all 0.2s ease-in-out;
+}
+.store-info-container {
+  flex-grow: 1;
+}
+.store-address {
+  font-size: 16px;
+  color: #514c4c;
+  margin-top: 19px;
+}
+.store-address span {
+  display: block;
+}
+.store-phone-number {
+  margin: 8px 0;
+}
+.store-phone-number a {
+  color: #b5adad;
+  text-decoration: none;
+}
+.store-number-container {
+  display: flex;
+  align-items: center;
+}
+.store-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: #b5adad;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}

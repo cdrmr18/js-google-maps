@@ -20,6 +20,11 @@
   margin-top: 8px;
   display: flex;
   align-items: center;
+  color: #514c4c;
+}
+.store-info-phone a {
+  text-decoration: none;
+  color: #514c4c;
 }
 .icon {
   width: 30px;

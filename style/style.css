@@ -6,7 +6,7 @@ body {
   height: 100vh;
 }
 .title {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: bold;
   position: absolute;
   z-index: 10;
@@ -27,7 +27,7 @@ body {
   top: 140px;
   left: 100px;
   border-radius: 8px;
-  width: 245px;
+  width: 280px;
   height: 30px;
   background-color: #454e53;
   border-radius: 30px;
@@ -45,14 +45,4 @@ body {
 }
 .search input:focus {
   outline: none;
-}
-.stores-list-container {
-  position: absolute;
-  z-index: 10;
-  width: 245px;
-  bottom: 20px;
-  left: 100px;
-  border-radius: 30px;
-  background-color: white;
-  top: 175px;
 }

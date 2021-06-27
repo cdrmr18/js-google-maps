@@ -76,7 +76,7 @@ const createMarker = (latlng, name, address, storeNumber, openStatusText, phoneN
                 <div class="icon">
                     <i class="fas fa-phone-alt"></i>
                 </div>
-                <span>${phoneNumber}</span>
+                <span><a href="tel:${phoneNumber}">${phoneNumber}</a></span>
             </div>
         </div>
     `
