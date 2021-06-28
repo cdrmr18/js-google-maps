@@ -46,3 +46,26 @@ body {
 .search input:focus {
   outline: none;
 }
+.intro {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.enter-zip {
+  color: #514c4c;
+  font-size: 20px;
+}
+.find-stores {
+  color: #198581;
+  font-size: 16px;
+}
+.no-stores-found {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #514c4c;
+  font-size: 18px;
+}

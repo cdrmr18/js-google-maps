@@ -7,10 +7,18 @@ function initMap() {
     const latlng = { lat: 34.063380, lng: -118.358080 };
     map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: 34.063380, lng: -118.358080 },
-        zoom: 8,
+        zoom: 11,
         center: latlng,
     });
     infowindow = new google.maps.InfoWindow();
+}
+const noStoresFound = () => {
+    const html = `
+        <div class="no-stores-found">
+            No stores found
+        </div>
+    `;
+    document.querySelector(".stores-list").innerHTML = html;
 }
 
 const clearLocations = () => {
@@ -94,10 +102,16 @@ const getStores = () => {
             throw new Error(response.status);
         }
     }).then((data) => {
-        clearLocations();
-        searchLocationsNear(data);
-        setStoresList(data);
-        setOnClickListener();
+        if(data.length > 0) {
+            clearLocations();
+            searchLocationsNear(data);
+            setStoresList(data);
+            setOnClickListener();
+        } else {
+            clearLocations();
+            noStoresFound();
+        }
+        
     })
 }
 
